@@ -1,0 +1,40 @@
+/* ui-kit.css: small dark UI kit (Barlow Condensed + IBM Plex Mono, both SIL OFL). Class prefix lx-. */
+/* Usage: <link rel="stylesheet" href="ui-kit.css"> with the fonts/ folder next to it. */
+@font-face{font-family:"Barlow C";src:url(fonts/BarlowCondensed-700-latin.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Barlow C";src:url(fonts/BarlowCondensed-500-latin.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Plex Mono";src:url(fonts/IBMPlexMono-400-latin.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Plex Mono";src:url(fonts/IBMPlexMono-600-latin.woff2) format("woff2");font-weight:600;font-display:swap}
+:root{--bg:#131518;--panel:#1b1e22;--panel2:#20242a;--line:#2c3036;--txt:#e7e2d6;--dim:#8d8f8f;--addr:#a7a294;--amber:#e0a43a;--up:#5bd16b;--down:#e2563f;
+ --f-head:"Barlow C",sans-serif;--f-body:"Plex Mono",ui-monospace,monospace}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--txt)}
+body{margin:0;font:15px/1.45 var(--f-body)}
+h1,h2,h3{font-family:var(--f-head);font-weight:700;letter-spacing:.02em;margin:0 0 .5em}
+h1{font-size:40px;line-height:.95;text-transform:uppercase}
+h2{font-size:20px;text-transform:uppercase;letter-spacing:.08em;color:var(--amber);display:flex;align-items:center;gap:12px}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+h3{font-size:19px}
+a{color:var(--amber);text-decoration:none}a:hover{text-decoration:underline}
+.lx-wrap{max-width:1280px;margin:auto;padding:28px clamp(14px,4vw,48px) 60px}
+.lx-head{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 28px;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:20px}
+.lx-sub{display:block;font:400 12px var(--f-body);color:var(--dim);letter-spacing:.06em;margin-top:6px;text-transform:none}
+.lx-panel,.card{background:var(--panel);border:1px solid var(--line);padding:14px}
+.lx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
+.lx-dim{color:var(--dim)}.lx-ok{color:var(--up)}.lx-bad{color:var(--down)}.lx-acc{color:var(--amber)}
+button,.lx-btn{font:600 13px var(--f-body);background:var(--panel);color:var(--txt);border:1px solid var(--line);border-radius:0;padding:7px 14px;cursor:pointer}
+button:hover,.lx-btn:hover{border-color:var(--amber)}
+button.primary,.lx-btn.primary{background:var(--amber);color:#131518;border-color:var(--amber)}
+button:disabled{opacity:.45;cursor:default}
+input,select,textarea{font:14px var(--f-body);background:var(--bg);color:var(--txt);border:1px solid var(--line);border-radius:0;padding:7px 10px;outline:0}
+input:focus,select:focus,textarea:focus{border-color:var(--amber)}
+table{border-collapse:collapse;width:100%}
+th{font:700 14px var(--f-head);text-transform:uppercase;letter-spacing:.08em;color:var(--dim);text-align:left;border-bottom:1px solid var(--line);padding:8px 10px}
+td{border-bottom:1px solid var(--line);padding:8px 10px;vertical-align:top}
+tr:hover td{background:var(--panel2)}
+.lx-bar{height:6px;background:var(--line)}.lx-bar>i{display:block;height:100%;background:var(--amber)}
+.lx-led{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--line)}.lx-led.up{background:var(--up)}.lx-led.down{background:var(--down)}
+.lx-tag{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);border:1px solid var(--line);padding:0 5px}
+.lx-foot{margin-top:40px;font-size:11.5px;color:var(--dim);border-top:1px solid var(--line);padding-top:12px}
+.lx-home{font:12px var(--f-body);color:var(--dim)}.lx-home:hover{color:var(--amber)}
+svg.lx-ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;vertical-align:-4px}
+@media(max-width:560px){h1{font-size:32px}}
